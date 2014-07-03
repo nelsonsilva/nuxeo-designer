@@ -2,10 +2,11 @@
 <html>
 <head>
 
-  <title>Designer</title>
+  <title>Nuxeo Designer</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="http://0.assets.nuxeo.com/wp-content/themes/nuxeo.com_wp/favicon.ico">
 
   <script src="components/platform/platform.js"></script>
 
@@ -13,10 +14,48 @@
 
   <style>
 
+    /* Nuxeo Fonts */
+    @font-face {
+      font-family:Aregular;
+      src:url(http://1.assets.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Regular.eot);
+      src:url(http://1.assets.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Regular.eot?#iefix) format('embedded-opentype'),url(http://1.assets.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Regular.woff) format('woff'),url(http://0.assets.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Regular.ttf) format('truetype'),url(http://0.assets.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Regular.svg#Aregular) format('svg');
+      font-weight:400;
+      font-style:normal
+    }
+
     body {
-      font-family: sans-serif;
-      margin: 0;
+      font-family: Aregular;
+      margin: 0px;
+      margin-top: 60px;
       overflow: hidden;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 1em 2em 0;
+      background-color: #fff;
+      z-index: 1000;
+      height: 60px;
+      box-sizing: border-box;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    }
+
+    #logo {
+      background:transparent url('http://0.assets.nuxeo.com/wp-content/themes/nuxeo.com_wp/imgs/logo340x60.png') no-repeat;
+      background-size: cover;
+      display: inline-block;
+      height:28px;
+      width:160px;
+    }
+
+    header span {
+      color: #003f7d;
+      font-size: 1.8em;
+      vertical-align: top;
+      padding: 0 0 0 1em;
     }
 
     designer-element {
@@ -24,6 +63,11 @@
       width: 100vw;
       overflow: hidden;
     }
+
+    designer-element /deep/ #tools {
+      margin-top: 60px;
+    }
+
 
   </style>
 
@@ -34,24 +78,17 @@
     var metadata = [
       'components/core-elements/metadata.html',
       'components/paper-elements/metadata.html',
-      'components/paper-form/metadata.html',
       'components/more-elements/metadata.html',
-      'components/polytype/metadata.html',
-      'components/topeka-elements/metadata.html'
+      'components/nuxeo-elements/metadata.html'
     ];
   </script>
 
+  <header>
+    <a href="#" id="logo"></a>
+    <span class="">Designer</span>
+  </header>
+
   <designer-element id="designer"></designer-element>
 
-  <script>
-    // Analytics for pp.org
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-39334307-1', 'auto');
-    ga('send', 'pageview');
-  </script>
 </body>
 </html>
